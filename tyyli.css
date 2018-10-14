@@ -1,0 +1,36 @@
+body{
+    width: 100%;
+    max-width: auto;
+    padding:5px;
+    margin: 0;
+    height: 100%;
+    max-height: 500px;
+}	
+p{
+    font-size: 35px;
+    font-family: 'Slabo 27px', sans-serif;
+    font-style: bold;
+    color:red;
+    font-kerning: auto;
+    
+}
+h1{
+    margin:35px;
+    padding:3px;
+    text-align: center;
+    font-family: 'Slabo 27px', sans-serif;
+    font-size: 50px;
+    color: red; 
+}
+a{
+    font-family: 'Slabo 27px', sans-serif;
+    font-size: 30px;
+    color:red;
+
+}
+a:hover{
+    font-size: 20px;
+    color: black;
+}
+
+

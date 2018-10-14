@@ -1,0 +1,263 @@
+    <!doctype html>
+    <html lang="fi">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <title>AutoGallery</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+            <!-- GRT Youtube Plugin CSS -->
+            <link rel="stylesheet" href="css/grt-responsive-menu.css">
+
+            <!--slideri-->
+            <link rel="stylesheet" href="css/image-slider.css"> <!--linkki sliderin tyylitiedostoon-->
+            <link rel="stylesheet" href="css/lightbox.css"> <!--linkki lightbox tyylitiedostoon-->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" > <!-- -	linkki fontawesome-kirjastoon-->
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link href="css/palapeli.css" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="tyyli.css">
+            <link href='https://fonts.googleapis.com/css?family=Kodchasan' rel='stylesheet'>
+            <style>
+                body{
+                    background-color: aqua;
+                }
+                label{
+                    display: inline-block;
+                        width:10em;
+                        font-family: 'Kodchasan';
+                        color:black;
+                        vertical-align:top;
+                        font-size:20px;
+                        font-weight:bold;
+                }
+                input,textarea{
+                        border:blue 1px solid;
+                        width:25em;
+                        color:blue;
+                        background-color:cornsilk;
+                        margin:6px 10px;
+                        border-radius: 3px;
+
+                }
+                h3{
+                     font-family: 'Kodchasan';
+                    font-size: 50px;
+                    color: red;
+                   margin-left: 50px!important;
+                    margin-top: 15px;
+                }
+                form{
+                width: 100%;
+
+                   margin: 0;
+                   padding-left: 35%;
+                    padding-top: 5%;
+
+                }
+                .solid {
+                    border-style: solid;
+                    border-width: medium;
+                    margin-right:50%;
+                    margin-top: 5%;
+                    margin-left: 0;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 70px;
+                    background-color: rgb(128, 255, 212,0.9);
+                }
+                p1{
+                    font-family: 'Kodchasan';
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                .palaute{
+                    border-style: solid;
+                    border-width: medium;
+                    margin-right:50%;
+                    margin-top: 5%;
+                    margin-left: 0;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 70px;
+                    background-color: rgb(128, 255, 212,0.9);
+                }
+                p2{
+                     font-family: 'Kodchasan';
+                    font-size: 20px;
+                    color: red;
+                     margin-bottom: 5px;
+                }
+                .double{
+                    border-style: double;
+                    border-width: medium;
+                    margin-right:630px;
+                    margin-top: 80px;
+                    padding-top: -40spx;  
+                    margin-left: 670px;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 10px;
+                    margin-bottom:-170px;
+                    background-color: rgb(128, 255, 212,0.9);
+                }
+                button {
+                    border-radius: 3px;
+                    background-size: 15px;
+                   
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <div class="menu-container">
+                    <div class="row no-margin">
+                        <div class="col-sm-4 col-xs-6 no-padding">
+                            <p>AutoGallery</p>
+                        </div>
+                        <div class="col-sm-8 col-xs-6 no-padding">
+                            <nav>
+                            <!-- mobiilinäyttö-->
+                                <button class="grt-mobile-button">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                </button>
+                                <!--navipalkki-->
+                                <ul class="grt-menu">
+                                    <li class="active"><a href="index.html">Etusivu</a></li>
+                                    <!--alastulovalikko-->
+                                    <li class="grt-dropdown"><a>Galleriat</a>
+                                        <ul class="grt-dropdown-list">
+                                            <li><a href="klassiko.html">Klassikot</a></li>
+                                            <li><a href="moderni.html">Modernit</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="palapeli.html">palapeli</a></li>
+                                    <li><a href="varaus.html">varaus</a></li>
+                                    <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
+                                </ul>
+                            </nav>
+                            </div>
+                    </div>
+                </div>
+            </header>
+    <!--yhteystietolomake osio-->
+            <div class="double">    
+            <h3>Yhteydenottolomake</h3>
+            <p2>Kiinnostuitko? Voit ottaa meihin yhteyttää jättämällä omia yhteystietojasi!</p2><br>
+            <button id="piilota">Piilota lomake</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="nayta">Näytä lomake</button><br>
+            <div id="palauteTeksti"></div>
+                </div>
+            <form onsubmit="return false">
+            <br><br>	
+            <div class="solid">
+    
+           
+            
+            <br>
+
+            <label for="nimi">Nimi:</label> 
+            <input type="text" id="nimi1" required><br>
+
+            <label for="sPosti">Sähköposti:</label>
+            <input type="email" id="sPosti1" required><br>
+
+            <label for="puhelin">Puhelin:</label>
+            <input type="tel" id="puhelin1" pattern="\+?[0-9 () \-]+"><br>
+
+
+            <label for="viestisi">Viesti:</label>
+            <textarea id="viestisi1"></textarea><br>
+
+            <label></label>
+            <input type="submit" value="Lähetä" onclick="Palaute()">
+        </div>
+                </form>
+
+        <!-- lomake scritit-->
+
+        <script>
+            <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+        </script>
+
+        <script>
+          $( function() {
+          $( "#datepicker" ).datepicker({ minDate: 0, maxDate: "+1M +10D" });
+          } );
+          </script>
+           
+            
+            
+    <!--haetaan lomakekentÃ¤n arvot-->
+            <script>
+                function Palaute(){
+                var nimi1= document.getElementById("nimi1").value;
+                var sPosti1= document.getElementById("sPosti1").value;
+                var puhelin1= document.getElementById("puhelin1").value;
+                var viestisi1= document.getElementById("viestisi1").value;
+
+
+                    //kirjoitetaan 1
+                    document.getElementById("palauteTeksti").innerHTML="<h4>Kiitos yhetydenotostasi"+"<br><p1>Nimi: </p1>"+nimi1+"<br><p1>Sähköposti: </p1>"+
+                        sPosti1+"<br><p1>Puhelin: </p1>"+puhelin1+"<br><p1>Viestisi: </p1>"+viestisi1+"<br><br>!!PALAAMME ASIAAN TUOTA PIKAA!!";
+    
+                   
+            }
+
+            </script>
+            <!--Määritellään näytä/piilota nappuloille scriptit-->
+            <script>
+			<!--TÃ¤ssÃ¤ mÃ¤Ã¤ritellÃ¤Ã¤n tekstin piilotukselle script-->
+			  $("#piilota").click(function(){
+				$("form").hide(1000); //luku on sekunteina
+				/*tÃ¤mÃ¤ koodi tekee painikesta toimimattomaksi eli harmaaksi,
+				jolloim sitÃ¤ ei vo enÃ¤Ã¤ klikata. Ainoa vaihtoehto on painaa NÃ¤ytÃ¤-
+				painiketta, jolloin se taas akvitoituu.
+				*/
+				$this=$(this);
+				$this
+				.siblings('button')
+				.removeAttr('disabled')
+				.end()
+				.attr('disabled','disabled');
+				
+				});
+				
+			$("#piilota").click(function(){
+				$("form").hide("slow"); 
+				});	
+			<!--TÃ¤ssÃ¤ mÃ¤Ã¤ritellÃ¤Ã¤n tekstin nÃ¤yttÃ¤miselle script-->
+			  $("#nayta").click(function(){
+				$("form").show("slow");
+				
+				$("#nayta").click(function(){
+				$("form").show(1000); //luku on sekunteina
+				});
+				/*tÃ¤mÃ¤ koodi tekee painikesta toimimattomaksi eli harmaaksi,
+				jolloim sitÃ¤ ei vo enÃ¤Ã¤ klikata. Ainoa vaihtoehto on painaa piilota-
+				painiketta, jolloin se taas akvitoituu.
+				*/
+				$this=$(this);
+				$this
+				.siblings('button')
+				.removeAttr('disabled')
+				.end()
+				.attr('disabled','disabled');
+				});
+				
+				
+			</script>
+
+
+        </body>
+    </html>

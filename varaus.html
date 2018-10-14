@@ -1,0 +1,202 @@
+    <!doctype html>
+    <html lang="fi">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <title>AutoGallery</title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+            <!-- GRT Youtube Plugin CSS -->
+            <link rel="stylesheet" href="css/grt-responsive-menu.css">
+
+            <!--slideri-->
+            <link rel="stylesheet" href="css/image-slider.css"> <!--linkki sliderin tyylitiedostoon-->
+            <link rel="stylesheet" href="css/lightbox.css"> <!--linkki lightbox tyylitiedostoon-->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" > <!-- -	linkki fontawesome-kirjastoon-->
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+            <link href="css/palapeli.css" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="tyyli.css">
+            <link href='https://fonts.googleapis.com/css?family=Kodchasan' rel='stylesheet'>
+            <style>
+                body{
+                    background-color: aqua;
+                }
+                label{
+                    display: inline-block;
+                        width:10em;
+                        font-family: 'Kodchasan';
+                        color:black;
+                        vertical-align:top;
+                        font-size:20px;
+                        font-weight:bold;
+                }
+                input,textarea{
+                        border:blue 1px solid;
+                        width:25em;
+                        color:blue;
+                        background-color:cornsilk;
+                        margin:6px 10px;
+                        border-radius: 3px;
+
+                }
+                h3{
+                     font-family: 'Kodchasan';font-size: 50px;
+                    color: red;
+                   margin-left: 90px;
+                }
+                form{
+                width: 100%;
+
+                   margin: 0;
+                   padding-left: 35%;
+                    padding-top: 5%;
+
+                }
+                .solid {
+                    border-style: solid;
+                    border-width: medium;
+                    margin-right:50%;
+                    margin-top: 5%;
+                    margin-left: 0;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 70px;
+                    background-color: rgb(128, 255, 212,0.9);
+                }
+                p1{
+                    font-family: 'Kodchasan';
+                    font-size: 15px;
+                    font-weight: bold;
+                }
+                .palaute{
+                    border-style: solid;
+                    border-width: medium;
+                    margin-right:50%;
+                    margin-top: 5%;
+                    margin-left: 0;
+                    border-radius: 5px;
+                    padding-left: 10px;
+                    padding-bottom: 70px;
+                    background-color: rgb(128, 255, 212,0.9);
+                }
+            </style>
+        </head>
+        <body>
+            <header>
+                <div class="menu-container">
+                    <div class="row no-margin">
+                        <div class="col-sm-4 col-xs-6 no-padding">
+                            <p>AutoGallery</p>
+                        </div>
+                        <div class="col-sm-8 col-xs-6 no-padding">
+                            <nav>
+                            <!-- mobiilinäyttö-->
+                                <button class="grt-mobile-button">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                                <div class="line3"></div>
+                                </button>
+                                <!--navipalkki-->
+                                <ul class="grt-menu">
+                                    <li class="active"><a href="index.html">Etusivu</a></li>
+                                    <!--alastulovalikko-->
+                                    <li class="grt-dropdown"><a>Galleriat</a>
+                                        <ul class="grt-dropdown-list">
+                                            <li><a href="klassiko.html">Klassikot</a></li>
+                                            <li><a href="moderni.html">Modernit</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="palapeli.html">palapeli</a></li>
+                                    <li><a href="varaus.html">varaus</a></li>
+                                    <li><a href="otayhteytta.html">Ota yhteyttä</a></li>
+                                </ul>
+                            </nav>
+                            </div>
+                    </div>
+                </div>
+            </header>
+    <!--varauslomake osio-->
+
+            <form onsubmit="return false">
+            <br><br>	
+            <div class="solid">
+            <h3>Varauslomake</h3>
+            <label for="nimi">Nimi:</label> 
+            <input type="text" id="nimi" required><br>
+
+            <label for="sPosti">Sähköposti:</label>
+            <input type="email" id="sPosti" required><br>
+
+            <label for="puhelin">Puhelin:</label>
+            <input type="tel" id="puhelin" pattern="\+?[0-9 () \-]+"><br>
+
+
+            <label for="puhelin">Varaus alkaa:</label>
+            <input type="text" id="datepicker" required><br>
+
+
+            <label for="puhelin">Varauksen kesto:</label>
+            <input type="number" id="varKesto" required><br>
+
+            <label for="puhelin">Kuvien lukumäärä:</label>
+            <input type="number" id="kuvat" required><br>
+
+            <label for="viestisi">Viesti:</label>
+            <textarea id="viestisi"></textarea><br>
+
+            <label></label>
+            <input type="submit"  value="Lähetä" onclick="Vahvistus()">
+                
+                <div id="palaute"></div>
+        </div>
+               
+                
+                </form>
+
+        <!-- lomake scritit-->
+
+        <script>
+            <script>
+        $( function() {
+            $( "#datepicker" ).datepicker();
+        } );
+        </script>
+
+        <script>
+          $( function() {
+          $( "#datepicker" ).datepicker({ minDate: 0, maxDate: "+1M +10D" });
+          } );
+          </script>
+           
+           
+    <!--haetaan lomakekentÃ¤n arvot-->
+            <script>
+                function Vahvistus(){
+                var nimi= document.getElementById("nimi").value;
+                var sPosti= document.getElementById("sPosti").value;
+                var puhelin= document.getElementById("puhelin").value;
+                var datepicker= document.getElementById("datepicker").value;
+                var varKesto= document.getElementById("varKesto").value;
+                var kuvat= document.getElementById("kuvat").value;
+                var viestisi= document.getElementById("viestisi").value;
+
+
+                    //kirjoitetaan 1
+                    document.getElementById("palaute").innerHTML="<h4>KIITOS VARAUKSESTASI"+"</h4>"+"<h4>Varauksen tiedot</h4>"+"<p1>Nimi: </p1>"+nimi+"<br><p1>Sähköposti: </p1>"+sPosti+"<br><p1>Puhelin: </p1>"+puhelin+
+                        "<br><p1>Varauksen alkamis ajanokohta: </p1>"+datepicker+"<br><p1>Varauksen kesto: </p1>"+varKesto+"<br><p1>Kuvien lukumäärä: </p1>"+kuvat+"<br><p1>Viestisi: </p1>"+viestisi;
+    
+                   
+            }
+
+
+            </script>
+
+
+        </body>
+    </html>
